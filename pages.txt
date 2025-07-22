@@ -1,0 +1,115 @@
+Best Page Creation Order (Step-by-Step)
+🔹 STEP 1: Setup Core (Reusables)
+Start by creating foundational components:
+
+Database connection file (db.php)
+
+Session handler / login check file
+
+Header and footer includes (header.php, footer.php)
+
+Base layout / CSS / JS setup
+
+🔹 STEP 2: Authentication
+Start with user access so you can test protected pages:
+
+Login Page (login.php)
+
+Logout Function
+
+(Optional) Register Admin/User Page (for creating staff users manually)
+
+🔹 STEP 3: Staff & Guardians (Independent Tables)
+Create records needed by other modules:
+
+Staff List + Add/Edit (/staff/list.php, add.php)
+
+Guardians List + Add/Edit (/guardians/list.php, add.php)
+
+🔹 STEP 4: Classes and Subjects
+Needed for enrollments and academics:
+
+Classes List + Add/Edit
+
+Subjects List + Add/Edit
+
+🔹 STEP 5: Students
+Now that you have guardians and classes:
+
+Student List
+
+Add/Edit Student (with Guardian select)
+
+Student Profile
+
+🔹 STEP 6: Enrollment
+Now you can assign students to classes:
+
+Enroll Student Page
+
+View Enrollments by Class/Year
+
+🔹 STEP 7: Attendance Module
+Mark Attendance (by class + date)
+
+Attendance Report (per student or class)
+
+🔹 STEP 8: Exams and Grades
+Add Exams (by class/subject)
+
+Enter Grades for Exams
+
+Student Grade Report
+
+🔹 STEP 9: Events
+Event List
+
+Add/Edit Events
+
+Optional: Calendar View
+
+🔹 STEP 10: Finance
+Fee Structure Setup (by class + term)
+
+Assign Fees
+
+Record Payments
+
+Student Payment Status
+
+Add/View Transactions
+
+Record Salaries
+
+🔹 STEP 11: Reports & Logs
+Admin Dashboard
+
+Activity Logs Viewer
+
+Attendance Summary
+
+Fee Summary
+
+Performance Reports
+
+🔁 Why This Order?
+Page	Depends On
+Students	Guardians
+Enrollments	Students, Classes
+Attendance	Enrollments
+Grades	Students, Exams
+Payments	Students, Fees, Transactions
+Salaries	Staff, Transactions
+Reports	All data modules
+
+🚀 Recommendation
+Start with:
+
+db.php — database connection
+
+login.php — login form
+
+staff/add.php — add yourself or a first admin/staff
+
+Then go to guardians/, classes/, and students/.
+
